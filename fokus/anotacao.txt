@@ -1,0 +1,3 @@
+npx create-expo-app@latest nome_projeto
+Remover os arquivo para a pasta app-example
+npm run reset-project
