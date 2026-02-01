@@ -1,25 +1,43 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={styles.container}
-    >
-      <Image source={require('./pomodoro.png')} />
-      <View style={styles.actions}>
-        <Text style={styles.timer}>25:00</Text>
-        <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>Começar</Text>
-        </Pressable>
-        <View style={styles.footer}>
-          <Text style={styles.footerText}>Projeto fictício e sem fins comerciais. </Text>
-          <Text style={styles.footerText}>Desenvolvido por Alura. </Text>
+    <ScrollView>
+      <View
+        style={styles.container}
+      >
+        <Image source={require('./pomodoro.png')} />
+        <View style={styles.actions}>
+          <View style={styles.content}>
+              <Pressable style={styles.contextButtonActive}>
+                <Text style={styles.contextButtonText}>
+                  Foco
+                </Text>
+              </Pressable>
+              <Pressable>
+                <Text style={styles.contextButtonText}>
+                  Pausa curta
+                </Text>
+              </Pressable>
+              <Pressable>
+                <Text style={styles.contextButtonText}>
+                  Pausa longa
+                </Text>
+              </Pressable>
+            </View>
+          <Text style={styles.timer}>25:00</Text>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Começar</Text>
+          </Pressable>
+          <View style={styles.footer}>
+            <Text style={styles.footerText}>Projeto fictício e sem fins comerciais. </Text>
+            <Text style={styles.footerText}>Desenvolvido por Alura. </Text>
+          </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -28,6 +46,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: '#021123',
     gap: 40
+  },
+    content: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  contextButtonText: {
+    fontSize: 12.2,
+    color: '#fff',
+    padding: 8
+  },
+  contextButtonActive: {
+    backgroundColor: '#144480',
+    borderRadius: 8
   },
   text: {
     color: '#fff'
@@ -65,4 +97,4 @@ const styles = StyleSheet.create({
     color: '#98a0a8',
     fontSize: 12.5
   }
-})
+});
