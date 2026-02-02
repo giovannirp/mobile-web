@@ -5,23 +5,26 @@ const pomodoro = [
   {
     id: 'focus',
     initialValue: 25,
-    image: require('./pomodoro.png')
+    image: require('./pomodoro.png'),
+    display: 'Foco'
   },
   {
-    id: 'focus',
+    id: 'short',
     initialValue: 5,
-    image: require('./short.png')
+    image: require('./short.png'),
+    display: 'Pausa curta'
   },
   {
-    id: 'focus',
+    id: 'long',
     initialValue: 25,
-    image: require('./long.png')
+    image: require('./long.png'),
+    display: 'Pausa longa'
   }
 ]
 
 export default function Index() {
 
-  const [timerType, settimerType] = useState(pomodoro[0])
+  const [timerType, setTimerType] = useState(pomodoro[0])
 
   return (
       <View
@@ -30,21 +33,18 @@ export default function Index() {
         <Image source={timerType.image} />
         <View style={styles.actions}>
           <View style={styles.content}>
-              <Pressable style={styles.contextButtonActive}>
-                <Text style={styles.contextButtonText}>
-                  Foco
-                </Text>
-              </Pressable>
-              <Pressable>
-                <Text style={styles.contextButtonText}>
-                  Pausa curta
-                </Text>
-              </Pressable>
-              <Pressable>
-                <Text style={styles.contextButtonText}>
-                  Pausa longa
-                </Text>
-              </Pressable>
+              {pomodoro.map(p => (
+                <Pressable
+                  key={p.id}
+                  style={timerType.id === p.id ? styles.contextButtonActive : null }
+                  onPress={() => setTimerType(p)}
+                  >
+                  <Text style={styles.contextButtonText}>
+                    {p.display}
+                  </Text>
+                </Pressable>
+              ))}
+
             </View>
           <Text style={styles.timer}>
             { new Date(timerType.initialValue * 1000).toLocaleTimeString('pt-BR', { minute: '2-digit', second: '2-digit'})}
