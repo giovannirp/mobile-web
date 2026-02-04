@@ -38,7 +38,7 @@ export default function Index() {
       return;
     }
     const id = setInterval(() => {
-      console.log('timer rolando')
+      console.log('timer rolando.')
     }, 1000)
     timeRef.current = id;
   }
