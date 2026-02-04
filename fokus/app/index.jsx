@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import ActionButton from "../Components/ActionButton";
 import FokusButtonNew from "../Components/FokusButtonNew";
@@ -29,6 +29,20 @@ export default function Index() {
 
   const [timerType, setTimerType] = useState(pomodoro[0])
 
+  const timeRef = useRef(null);
+
+  const toggleTimer = () => {
+    if (timeRef.current) {
+      // pausar
+      clearInterval(timeRef.current);
+      return;
+    }
+    const id = setInterval(() => {
+      console.log('timer rolando')
+    }, 1000)
+    timeRef.current = id;
+  }
+
   return (
       <View
         style={styles.container}
@@ -46,7 +60,10 @@ export default function Index() {
               ))}
             </View>
             <Timer totalSeconds={timerType.initialValue} />
-          <FokusButtonNew />
+          <FokusButtonNew
+            title={timeRef.current ? 'Pausar' : 'Começar'}
+            onPress={toggleTimer} 
+          />
           <View style={styles.footer}>
             <Text style={styles.footerText}>Projeto fictício e sem fins comerciais. </Text>
             <Text style={styles.footerText}>Desenvolvido por Alura. </Text>
