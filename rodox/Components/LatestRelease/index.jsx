@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Capa from '../../assets/images/capa.png';
 
 
@@ -6,7 +6,7 @@ export default function index() {
   return (
     <View style={styles.container}>
       <Text style={styles.sectionTitle}>
-        Último Lançamento
+        Últimos Lançamentos
       </Text>
 
       <View style={styles.card}>
@@ -14,6 +14,17 @@ export default function index() {
           source={Capa}
           style={styles.cover}
         />
+
+        <View style={styles.info}>
+          <Text style={styles.title}>Rodox - O Inimigo</Text>
+          <Text style={styles.year}>2025</Text>
+
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>▶ Ouvir</Text>
+          </TouchableOpacity>
+
+        </View>
+
       </View>
     </View>
   )
@@ -43,5 +54,28 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 4,
     marginRight: 15
+  },
+  info: {
+    flex: 1
+  },
+  title: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600'
+  }, 
+  year: {
+    color: '#888',
+    marginBottom: 10
+  },
+  button: {
+    backgroundColor: '#c40000',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 4,
+    alignSelf: 'flex-start'
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold'
   }
 });

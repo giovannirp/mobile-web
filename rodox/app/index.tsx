@@ -1,18 +1,20 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import Banner from "../Components/Banner";
 import Header from "../Components/Header";
 import LatestRelease from "../Components/LatestRelease";
 import Menu from "../Components/Menu";
+import UpcomingShows from "../Components/UpcomingShows";
 
 export default function index() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Header />
       <Menu />
       <Banner />
       <LatestRelease />
-    </View>
+      <UpcomingShows />
+    </ScrollView>
   );
 }
 

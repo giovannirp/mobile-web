@@ -1,0 +1,19 @@
+{
+  "shows": [
+    {
+      "id": 1,
+      "cidade": "São Paulo",
+      "data": "12/03"
+    },
+    {
+      "id": 2,
+      "cidade": "Rio de Janeiro",
+      "data": "20/03"
+    },
+    {
+      "id": 3,
+      "cidade": "Santa Catarina",
+      "data": "20/05"
+    }
+  ]
+}
