@@ -1,9 +1,11 @@
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
 import Banner from "../Components/Banner";
+import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import LatestRelease from "../Components/LatestRelease";
 import Menu from "../Components/Menu";
+import SocialMedia from "../Components/SocialMedia";
 import UpcomingShows from "../Components/UpcomingShows";
 
 export default function index() {
@@ -14,6 +16,8 @@ export default function index() {
       <Banner />
       <LatestRelease />
       <UpcomingShows />
+      <SocialMedia />
+      <Footer />
     </ScrollView>
   );
 }
