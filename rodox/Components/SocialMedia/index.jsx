@@ -10,7 +10,7 @@ export default function index() {
       <View style={styles.iconsContainer}>
         <FontAwesome name="instagram" size={40} color="#fff" />
         <Entypo name="youtube" size={50} color="#ff0000" />
-        <FontAwesome name="spotify" size={50} color="#fff" />
+        <FontAwesome name="spotify" size={50} color="#09c021" />
       </View>
 
       <View style={styles.line} />
