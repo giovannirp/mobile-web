@@ -14,7 +14,10 @@ export default function index() {
         </Text>
 
         <Image source={require('../assets/images/home.png')} />
-        <FokusButtonNew title="Quero iniciar" />
+        <FokusButtonNew 
+          title="Quero iniciar" 
+          onPress={() => console.log('navegar')} 
+        />
       </View>
 
       <View style={styles.footer}>
