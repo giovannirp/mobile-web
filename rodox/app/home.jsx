@@ -1,4 +1,3 @@
-import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
@@ -8,7 +7,7 @@ import Menu from "../Components/Menu";
 import SocialMedia from "../Components/SocialMedia";
 import UpcomingShows from "../Components/UpcomingShows";
 
-export default function index() {
+export default function Home() {
   return (
     <ScrollView style={styles.container}>
       <Header />
