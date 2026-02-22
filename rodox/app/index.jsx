@@ -26,7 +26,7 @@ export default function index({ navigation }) {
                 style={styles.button}
                 activeOpacity={0.8}
               >
-                <Text style={styles.buttonText}>ENTRAR</Text>
+                <Text style={styles.buttonText}>ENTRAR te</Text>
               </TouchableOpacity>
             </Link>
 
