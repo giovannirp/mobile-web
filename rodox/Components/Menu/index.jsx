@@ -1,16 +1,23 @@
+import { Link } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function index() {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
-        <Text style={styles.item}>Texto</Text>
+        <Text style={styles.item}>
+          <Link href="/">
+          Home
+          </Link>
+          </Text>
       </TouchableOpacity>
 
       <Text style={styles.separator}>|</Text>
 
       <TouchableOpacity>
-        <Text style={styles.item}>Sobre</Text>
+        <Text style={styles.item}>
+          <Link href="/sobre">Sobre</Link>
+        </Text>
       </TouchableOpacity>
 
       <Text style={styles.separator}>|</Text>
