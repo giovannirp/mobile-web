@@ -1,16 +1,26 @@
 import { Entypo, FontAwesome } from '@expo/vector-icons';
-import { StyleSheet, Text, View } from 'react-native';
+import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 
 export default function index() {
+  const openLink = (url) => {
+    Linking.openURL(url);
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.line} />
       <Text style={styles.title}>Siga nas Redes</Text>
 
       <View style={styles.iconsContainer}>
-        <FontAwesome name="instagram" size={40} color="#fff" />
-        <Entypo name="youtube" size={50} color="#ff0000" />
-        <FontAwesome name="spotify" size={50} color="#09c021" />
+        <Pressable onPress={() => openLink('https://instagram.com')}>
+          <FontAwesome name="instagram" size={40} color="#fff" />
+        </Pressable>
+        <Pressable onPress={() => openLink('https://youtube.com')}>
+          <Entypo name="youtube" size={50} color="#ff0000" />
+        </Pressable>
+        <Pressable onPress={() => openLink("https://spotify.com")}>
+          <FontAwesome name="spotify" size={50} color="#09c021" />
+        </Pressable>
       </View>
 
       <View style={styles.line} />
