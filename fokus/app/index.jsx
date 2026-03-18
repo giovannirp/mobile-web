@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import FokusButtonNew from "../Components/FokusButtonNew";
 
@@ -16,7 +17,7 @@ export default function index() {
         <Image source={require('../assets/images/home.png')} />
         <FokusButtonNew 
           title="Quero iniciar" 
-          onPress={() => console.log('navegar')} 
+          onPress={() => router.replace('/pomodoro')} 
         />
       </View>
 
